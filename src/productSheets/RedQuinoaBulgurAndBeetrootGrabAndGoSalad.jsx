@@ -18,7 +18,7 @@ export const productData = {
     "1 small red cheese crumbled",
 
     "60g toasted pumpkin seeds",
-    "Handful fresh parsley, choppud",
+    "Handful fresh parsley, chopped",
     "Handful fresh mint, chopped",
   ],
   dressing: [
