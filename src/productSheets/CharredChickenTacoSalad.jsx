@@ -30,9 +30,7 @@ export const productData = {
   "notes": [
     "The source PDF text for this recipe is truncated after “or a mini…”. No extra method text has been invented."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Expanded salad reference | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/charred-taco-salad.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

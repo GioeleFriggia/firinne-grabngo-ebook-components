@@ -26,9 +26,7 @@ export const productData = {
   "method": [
     "Assemble the protein with listed salads and sauce, then label and chill ≤5°C."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.",
-  "photo": "/images/halloumi-box.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

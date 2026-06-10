@@ -30,9 +30,7 @@ export const productData = {
     "Dress.",
     "Add feta last."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Grab-and-Go Salad | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/broccoli-hazelnut.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

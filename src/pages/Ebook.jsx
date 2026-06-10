@@ -6,6 +6,7 @@ import '../css/Ebook.css';
 
 export default function Ebook({ products, updateProduct, resetDemoData }) {
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [category, setCategory] = useState('All');
   const [query, setQuery] = useState('');
 
@@ -36,13 +37,24 @@ export default function Ebook({ products, updateProduct, resetDemoData }) {
     });
   }, [products, category, query]);
 
+  function handleProductSelect(product) {
+    setSelectedProduct(product);
+    setIsDetailOpen(true);
+    window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  }
+
+  function handleBackToProducts() {
+    setIsDetailOpen(false);
+    window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+  }
+
   function handleUpdate(product) {
     updateProduct(product);
     setSelectedProduct(product);
   }
 
   return (
-    <main className="ebook-page">
+    <main className={`ebook-page ${isDetailOpen ? 'detail-open' : 'library-open'}`}>
       <aside className="catalog-panel no-print">
         <ProductFilters
           categories={categories}
@@ -53,19 +65,35 @@ export default function Ebook({ products, updateProduct, resetDemoData }) {
           resetDemoData={resetDemoData}
         />
 
+        <div className="mobile-library-summary">
+          <span>{filteredProducts.length} product sheets</span>
+          <small>Tap a product to open the full sheet</small>
+        </div>
+
         <div className="product-list">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
               isSelected={selectedProduct?.id === product.id}
-              onSelect={() => setSelectedProduct(product)}
+              onSelect={() => handleProductSelect(product)}
             />
           ))}
         </div>
+
+        {filteredProducts.length === 0 && (
+          <div className="empty-state mobile-empty-state">No matching product sheet found.</div>
+        )}
       </aside>
 
       <section className="detail-panel">
+        <div className="mobile-detail-bar no-print">
+          <button type="button" className="back-to-products-btn" onClick={handleBackToProducts}>
+            ← Products
+          </button>
+          {selectedProduct && <span>{selectedProduct.dishTitle}</span>}
+        </div>
+
         {selectedProduct ? (
           <ProductDetail product={selectedProduct} updateProduct={handleUpdate} />
         ) : (

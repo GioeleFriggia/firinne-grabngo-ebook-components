@@ -30,9 +30,7 @@ export const productData = {
   "notes": [
     "The source PDF spells the product “Ceasar Salad” and the method text is truncated after “mixed herbs,”. No extra method text has been invented."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Expanded salad reference | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/ceasar-salad.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

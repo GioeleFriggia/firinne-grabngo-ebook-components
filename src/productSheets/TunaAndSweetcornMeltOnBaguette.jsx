@@ -27,9 +27,7 @@ export const productData = {
     "Use cheese layer for moisture control."
   ],
   "method": [],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/tuna-baguette.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

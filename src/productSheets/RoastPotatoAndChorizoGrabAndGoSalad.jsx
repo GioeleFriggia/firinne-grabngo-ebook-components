@@ -31,9 +31,7 @@ export const productData = {
     "Combine potatoes, chorizo, peppers, onion, parsley, and nuts/seeds.",
     "Whisk dressing to salad."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Grab-and-Go Salad | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/potato-chorizo.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

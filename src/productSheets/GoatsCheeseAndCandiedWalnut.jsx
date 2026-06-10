@@ -27,9 +27,7 @@ export const productData = {
   "notes": [
     "The source PDF text for this method is truncated; no extra method text has been invented."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Expanded salad reference | Keep chilled ≤5°C | Dressing on side | Verify supplier declarations before final labelling.",
-  "photo": "/images/goats-cheese-walnut.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

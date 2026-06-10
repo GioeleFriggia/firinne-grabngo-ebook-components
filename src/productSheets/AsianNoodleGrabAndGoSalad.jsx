@@ -37,9 +37,7 @@ export const productData = {
     "Whisk together soy sauce, rice vinegar, oils, honey, garlic, ginger, and chilli.",
     "Pour dressing over salad and mix thoroughly."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Grab-and-Go Salad | Contains soy and sesame | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/asian-noodle.svg",
+  "photo": "/images/asian-noodle-real.png",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

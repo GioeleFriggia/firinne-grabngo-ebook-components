@@ -29,9 +29,7 @@ export const productData = {
     "Prep veg."
   ],
   "method": [],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Vegan Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/falafel-bagel.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

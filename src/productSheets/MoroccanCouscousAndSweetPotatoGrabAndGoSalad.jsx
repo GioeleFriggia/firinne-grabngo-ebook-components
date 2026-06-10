@@ -36,9 +36,7 @@ export const productData = {
     "Stir spices into couscous, cover, and let sit 5 min. Fluff with a fork.",
     "Add sweet potato, peppers, tomatoes, onion, herbs, almonds or pumpkin seeds, and dressing."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Grab-and-Go Salad | Contains gluten wheat | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/moroccan-couscous.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

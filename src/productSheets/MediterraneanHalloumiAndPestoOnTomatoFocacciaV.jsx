@@ -27,9 +27,7 @@ export const productData = {
     "Roast peppers & tomatoes."
   ],
   "method": [],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Vegetarian Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/halloumi-sandwich.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

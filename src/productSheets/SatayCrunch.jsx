@@ -38,9 +38,7 @@ export const productData = {
   "notes": [
     "Parts of the source PDF text are truncated; the visible wording has been preserved without inventing missing text."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Expanded salad reference | Keep chilled ≤5°C | Dressing on side | Verify supplier declarations before final labelling.",
-  "photo": "/images/satay-crunch.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

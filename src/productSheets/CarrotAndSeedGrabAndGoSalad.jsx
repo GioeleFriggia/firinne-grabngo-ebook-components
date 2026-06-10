@@ -36,9 +36,7 @@ export const productData = {
     "Combine carrots, onion, herbs, and seeds.",
     "Add dressing over salad and toss to combine."
   ],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Grab-and-Go Salad | Contains sesame | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/carrot-seed.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

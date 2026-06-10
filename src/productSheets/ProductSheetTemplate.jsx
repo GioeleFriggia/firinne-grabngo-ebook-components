@@ -55,7 +55,18 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <p>{draft.shortDescription}</p>
           {draft.sourcePage && <p className="source-note">Source: {draft.sourcePage}</p>}
         </div>
-        <img src={draft.photo} alt={draft.dishTitle} />
+        <div className="firinne-label-frame" aria-label={`${draft.dishTitle} photo frame`}>
+          <div className="firinne-label-inner">
+            <div className="firinne-label-brand">
+              <span>FÍRINNE</span>
+              <small>～ HONEST HEALTHY FOOD ～</small>
+            </div>
+
+            <div className="firinne-photo-box">
+              <img src={draft.photo} alt={draft.dishTitle} />
+            </div>
+          </div>
+        </div>
       </header>
 
       <section className="sheet-grid commercial-grid">
@@ -96,14 +107,26 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
       <section className="sheet-grid bottom-grid">
         <div className="sheet-section packaging-box">
           <h2><Package size={18} /> Packaging codes and label</h2>
-          <label>
-            Packaging code
-            <input value={draft.packagingCode} onChange={(event) => updateField('packagingCode', event.target.value)} />
-          </label>
-          <label>
-            Label text
-            <textarea value={draft.label} onChange={(event) => updateField('label', event.target.value)} />
-          </label>
+
+          <div className="packaging-status">
+            <span>Packaging code</span>
+            <strong>Pending confirmation</strong>
+          </div>
+
+          <div className="packaging-status">
+            <span>Label text</span>
+            <strong>Pending confirmation</strong>
+          </div>
+
+          <div className="label-reference">
+            <p className="reference-title">Reference data available:</p>
+            <p>Dish title, ingredients, allergens and sauce/dressing information are available from the source material.</p>
+          </div>
+
+          <div className="example-label">
+            <span>Example format only</span>
+            <p>Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.</p>
+          </div>
         </div>
 
         <div className="sheet-section allergen-box">

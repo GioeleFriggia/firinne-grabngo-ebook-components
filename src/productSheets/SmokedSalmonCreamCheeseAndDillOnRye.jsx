@@ -29,9 +29,7 @@ export const productData = {
     "Assemble chilled."
   ],
   "method": [],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/salmon-rye.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

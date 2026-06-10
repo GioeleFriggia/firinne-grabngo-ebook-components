@@ -33,8 +33,6 @@ export const products = [
       'Whisk dressing ingredients together.',
       'Pour dressing over salad; mix gently.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Keep chilled ≤5°C | 2–3 day chilled hold | Verify supplier declarations before final labelling.',
     photo: '/images/red-quinoa.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -75,8 +73,6 @@ export const products = [
       'Dress.',
       'Add feta last.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/broccoli-hazelnut.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -122,8 +118,6 @@ export const products = [
       'Combine carrots, onion, herbs, and seeds.',
       'Add dressing over salad and toss to combine.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Contains sesame | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/carrot-seed.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -169,8 +163,6 @@ export const products = [
       'Whisk together soy sauce, rice vinegar, oils, honey, garlic, ginger, and chilli.',
       'Pour dressing over salad and mix thoroughly.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Contains soy and sesame | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/asian-noodle.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -219,8 +211,6 @@ export const products = [
       'Stir spices into couscous, cover, and let sit 5 min. Fluff with a fork.',
       'Add sweet potato, peppers, tomatoes, onion, herbs, almonds or pumpkin seeds, and dressing.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Contains gluten wheat | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/moroccan-couscous.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -261,8 +251,6 @@ export const products = [
       'Combine potatoes, chorizo, peppers, onion, parsley, and nuts/seeds.',
       'Whisk dressing to salad.'
     ],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Grab-and-Go Salad | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/potato-chorizo.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -299,8 +287,6 @@ export const products = [
       'Heat a pan on a medium heat. Add olive oil and garlic. Cook for about 2–3 minutes then add the orzo pasta. Coat the pasta.'
     ],
     notes: ['The source PDF text for this method is truncated after “Coat the past…”. No extra method text has been invented.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Expanded salad reference | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/orzo-red-pepper.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -327,8 +313,6 @@ export const products = [
       'Mixed salad leaf as base of salad, add the roasted beetroot wedges, add the sweet potatoes, Place the goats’ cheese in the salad.'
     ],
     notes: ['The source PDF text for this method is truncated; no extra method text has been invented.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Expanded salad reference | Keep chilled ≤5°C | Dressing on side | Verify supplier declarations before final labelling.',
     photo: '/images/goats-cheese-walnut.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -360,8 +344,6 @@ export const products = [
       'Cut old bread into cubes, Coat the bread in 2 tablespoons of olive oil & teaspoon of garlic puree. Add the mixed herbs.'
     ],
     notes: ['The source PDF spells the product “Ceasar Salad” and the method text is truncated after “mixed herbs,”. No extra method text has been invented.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Expanded salad reference | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/ceasar-salad.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -401,8 +383,6 @@ export const products = [
       'Assemble the Salad with a base of mixed greens, pickled vegetables, grilled tofu. Garnished with tossed peanuts & Sesame.'
     ],
     notes: ['Parts of the source PDF text are truncated; the visible wording has been preserved without inventing missing text.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Expanded salad reference | Keep chilled ≤5°C | Dressing on side | Verify supplier declarations before final labelling.',
     photo: '/images/satay-crunch.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -432,8 +412,6 @@ export const products = [
       'Marinate the chicken in a 2 tablespoon of olive oil and tablespoon of blackened Cajun Chicken. Rest over night or a minimum.'
     ],
     notes: ['The source PDF text for this recipe is truncated after “or a mini…”. No extra method text has been invented.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Expanded salad reference | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/charred-taco-salad.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -460,8 +438,6 @@ export const products = [
       'Cool fully.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.',
     photo: '/images/tandoori-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -494,8 +470,6 @@ export const products = [
       'Cool.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.',
     photo: '/images/halloumi-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -527,8 +501,6 @@ export const products = [
       'Cool gently.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Contains fish | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.',
     photo: '/images/salmon-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -562,8 +534,6 @@ export const products = [
       'Cool & slice or leave whole.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Contains soy and sesame | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.',
     photo: '/images/miso-chicken-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -594,8 +564,6 @@ export const products = [
       'Cool.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included | Verify supplier declarations before final labelling.',
     photo: '/images/peri-peri-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -628,8 +596,6 @@ export const products = [
       'Sauce: ready-made pesto + lemon.'
     ],
     method: ['Assemble the protein with listed salads and sauce, then label and chill ≤5°C.'],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Protein Lunch Box | Vegan sauce | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/falafel-box.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -668,8 +634,6 @@ export const products = [
       'Keep bacon separate.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/chicken-caesar.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -700,8 +664,6 @@ export const products = [
       'Roast peppers & tomatoes.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Vegetarian Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/halloumi-sandwich.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -733,8 +695,6 @@ export const products = [
       'Warm wraps.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Wrap | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/beef-wrap.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -765,8 +725,6 @@ export const products = [
       'Use cheese layer for moisture control.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/tuna-baguette.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -799,8 +757,6 @@ export const products = [
       'Prep veg.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Vegan Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/falafel-bagel.svg',
     unitCost: '',
     unitSellingPrice: '',
@@ -833,8 +789,6 @@ export const products = [
       'Assemble chilled.'
     ],
     method: [],
-    packagingCode: 'TBC - not provided in source PDF',
-    label: 'Sandwich | Keep chilled ≤5°C | Verify supplier declarations before final labelling.',
     photo: '/images/salmon-rye.svg',
     unitCost: '',
     unitSellingPrice: '',

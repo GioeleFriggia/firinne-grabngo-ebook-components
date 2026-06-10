@@ -28,9 +28,7 @@ export const productData = {
     "Warm wraps."
   ],
   "method": [],
-  "packagingCode": "TBC - not provided in source PDF",
-  "label": "Wrap | Keep chilled ≤5°C | Verify supplier declarations before final labelling.",
-  "photo": "/images/beef-wrap.svg",
+  "photo": "/images/product-photo-pending.svg",
   "unitCost": "",
   "unitSellingPrice": "",
   "allergens": [

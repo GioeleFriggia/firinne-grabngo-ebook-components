@@ -3,9 +3,16 @@ import { RotateCcw, Search } from 'lucide-react';
 export default function ProductFilters({ categories, category, setCategory, query, setQuery, resetDemoData }) {
   return (
     <div className="filters-card">
-      <div>
-        <p className="eyebrow small">Product library</p>
-        <h2>Sheets</h2>
+      <div className="library-heading">
+        <div>
+          <p className="eyebrow small">Product library</p>
+          <h2>Sheets</h2>
+        </div>
+
+        <button className="reset-btn reset-btn-compact" onClick={resetDemoData} aria-label="Reset demo data">
+          <RotateCcw size={16} />
+          <span>Reset</span>
+        </button>
       </div>
 
       <label className="search-box">
@@ -17,7 +24,7 @@ export default function ProductFilters({ categories, category, setCategory, quer
         />
       </label>
 
-      <div className="category-pills">
+      <div className="category-pills" aria-label="Product categories">
         {categories.map((item) => (
           <button
             key={item}
@@ -29,7 +36,7 @@ export default function ProductFilters({ categories, category, setCategory, quer
         ))}
       </div>
 
-      <button className="reset-btn" onClick={resetDemoData}>
+      <button className="reset-btn reset-btn-full" onClick={resetDemoData}>
         <RotateCcw size={16} /> Reset demo data
       </button>
     </div>

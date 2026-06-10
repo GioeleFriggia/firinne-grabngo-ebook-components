@@ -37,10 +37,7 @@ export const productData = {
     "Whisk dressing ingredients together.",
     "Pour dressing over salad; mix gently.",
   ],
-  packagingCode: "TBC - not provided in source PDF",
-  label:
-    "Grab-and-Go Salad | Keep chilled ≤5°C | 2–3 day chilled hold | Verify supplier declarations before final labelling.",
-  photo: "/images/red-quinoa.svg",
+  photo: "/images/product-photo-pending.svg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [
