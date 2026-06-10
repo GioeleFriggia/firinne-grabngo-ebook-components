@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green-950: #092f22;
+  --green-900: #0d3d2d;
+  --green-800: #14543d;
+  --green-700: #1d6b4e;
+  --green-100: #dff4e9;
+  --cream: #fbf8ef;
+  --sand: #efe5ce;
+  --white: #ffffff;
+  --ink: #15201b;
+  --muted: #65726c;
+  --line: #e6ded0;
+  --shadow: 0 24px 70px rgba(9, 47, 34, 0.16);
+  --radius-lg: 30px;
+  --radius-md: 20px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(29, 107, 78, 0.2), transparent 30%),
+    linear-gradient(135deg, #fbf8ef 0%, #f5efdf 42%, #e9f3e9 100%);
+}
+
+button, input, textarea { font: inherit; }
+
+button { cursor: pointer; }
+
+.app-shell { min-height: 100vh; }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 54px);
+  background: rgba(251, 248, 239, 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(230, 222, 208, 0.9);
+}
+
+.brand-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--green-950);
+  text-align: left;
+}
+
+.brand-button strong { display: block; font-size: 1.05rem; }
+.brand-button small { color: var(--muted); font-weight: 600; }
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--green-900);
+  color: white;
+  font-weight: 900;
+  font-size: 1.35rem;
+  box-shadow: 0 14px 30px rgba(13, 61, 45, 0.22);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-actions button,
+.primary-btn,
+.secondary-btn,
+.reset-btn,
+.sheet-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--green-950);
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.nav-actions button:hover,
+.primary-btn:hover,
+.secondary-btn:hover,
+.reset-btn:hover,
+.sheet-toolbar button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(9, 47, 34, 0.12);
+}
+
+.nav-actions button.active,
+.primary-btn {
+  background: var(--green-900);
+  color: white;
+  border-color: var(--green-900);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--green-700);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow.small { font-size: 0.74rem; }
+
+@media (max-width: 760px) {
+  .navbar { align-items: flex-start; flex-direction: column; }
+  .nav-actions { width: 100%; justify-content: flex-start; }
+  .nav-actions button { flex: 1; min-width: 120px; }
+}
+
+@media print {
+  body { background: white; }
+  .navbar, .no-print, .catalog-panel { display: none !important; }
+  .ebook-page { display: block !important; padding: 0 !important; }
+  .detail-panel { max-width: none !important; }
+  .product-sheet { box-shadow: none !important; border: 0 !important; }
+}

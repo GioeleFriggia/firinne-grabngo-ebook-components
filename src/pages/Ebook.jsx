@@ -1,0 +1,77 @@
+import { useMemo, useState } from 'react';
+import ProductCard from '../components/ProductCard';
+import ProductDetail from '../components/ProductDetail';
+import ProductFilters from '../components/ProductFilters';
+import '../css/Ebook.css';
+
+export default function Ebook({ products, updateProduct, resetDemoData }) {
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
+  const [category, setCategory] = useState('All');
+  const [query, setQuery] = useState('');
+
+  const categories = useMemo(() => ['All', ...new Set(products.map((product) => product.category))], [products]);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesCategory = category === 'All' || product.category === category;
+      const lowerQuery = query.toLowerCase();
+      const matchesQuery =
+        product.dishTitle.toLowerCase().includes(lowerQuery) ||
+        [
+          product.ingredients,
+          product.dressing,
+          product.method,
+          product.build,
+          product.prep,
+          product.proteinMethod,
+          product.sauce,
+          product.allergens
+        ]
+          .filter(Boolean)
+          .flat()
+          .join(' ')
+          .toLowerCase()
+          .includes(lowerQuery);
+      return matchesCategory && matchesQuery;
+    });
+  }, [products, category, query]);
+
+  function handleUpdate(product) {
+    updateProduct(product);
+    setSelectedProduct(product);
+  }
+
+  return (
+    <main className="ebook-page">
+      <aside className="catalog-panel no-print">
+        <ProductFilters
+          categories={categories}
+          category={category}
+          setCategory={setCategory}
+          query={query}
+          setQuery={setQuery}
+          resetDemoData={resetDemoData}
+        />
+
+        <div className="product-list">
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              isSelected={selectedProduct?.id === product.id}
+              onSelect={() => setSelectedProduct(product)}
+            />
+          ))}
+        </div>
+      </aside>
+
+      <section className="detail-panel">
+        {selectedProduct ? (
+          <ProductDetail product={selectedProduct} updateProduct={handleUpdate} />
+        ) : (
+          <div className="empty-state">Select a product sheet.</div>
+        )}
+      </section>
+    </main>
+  );
+}
