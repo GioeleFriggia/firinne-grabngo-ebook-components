@@ -1,35 +1,41 @@
-import { useMemo, useState } from 'react';
-import { products as defaultProducts } from './productSheets';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Ebook from './pages/Ebook';
+import { useMemo, useState } from "react";
+import { products as defaultProducts } from "./productSheets";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Ebook from "./pages/Ebook";
+import LiquidIntro from "./components/LiquidIntro";
+import "./css/LiquidSystem.css";
 
-const STORAGE_KEY = 'firinne-grabngo-products-v1';
+const STORAGE_KEY = "firinne-grabngo-products-v1";
 
 function loadProducts() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved ? JSON.parse(saved) : defaultProducts;
   } catch (error) {
-    console.error('Unable to load saved products', error);
+    console.error("Unable to load saved products", error);
     return defaultProducts;
   }
 }
 
 export default function App() {
-  const [view, setView] = useState('home');
+  const [view, setView] = useState("home");
   const [products, setProducts] = useState(loadProducts);
 
   const stats = useMemo(() => {
     const total = products.length;
-    const categories = [...new Set(products.map((product) => product.category))];
-    const allergens = [...new Set(products.flatMap((product) => product.allergens))];
+    const categories = [
+      ...new Set(products.map((product) => product.category)),
+    ];
+    const allergens = [
+      ...new Set(products.flatMap((product) => product.allergens)),
+    ];
     return { total, categories, allergens };
   }, [products]);
 
   function updateProduct(updatedProduct) {
     const nextProducts = products.map((product) =>
-      product.id === updatedProduct.id ? updatedProduct : product
+      product.id === updatedProduct.id ? updatedProduct : product,
     );
     setProducts(nextProducts);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(nextProducts));
@@ -41,17 +47,22 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
-      <Navbar view={view} setView={setView} />
-      {view === 'home' ? (
-        <Home stats={stats} setView={setView} />
-      ) : (
-        <Ebook
-          products={products}
-          updateProduct={updateProduct}
-          resetDemoData={resetDemoData}
-        />
-      )}
-    </div>
+    <>
+      <LiquidIntro />
+
+      <div className="app-shell">
+        <Navbar view={view} setView={setView} />
+
+        {view === "home" ? (
+          <Home stats={stats} setView={setView} />
+        ) : (
+          <Ebook
+            products={products}
+            updateProduct={updateProduct}
+            resetDemoData={resetDemoData}
+          />
+        )}
+      </div>
+    </>
   );
 }

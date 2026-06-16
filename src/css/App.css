@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --green-950: #092f22;
@@ -15,6 +15,13 @@
   --shadow: 0 24px 70px rgba(9, 47, 34, 0.16);
   --radius-lg: 30px;
   --radius-md: 20px;
+
+  --liquid-glass: rgba(255, 255, 255, 0.56);
+  --liquid-glass-strong: rgba(255, 255, 255, 0.78);
+  --liquid-border: rgba(255, 255, 255, 0.66);
+  --liquid-shadow: 0 22px 70px rgba(9, 47, 34, 0.14);
+  --liquid-gold: #f8aa3c;
+  --liquid-gold-soft: rgba(248, 170, 60, 0.22);
 }
 
 * {
@@ -59,47 +66,154 @@ button {
   min-height: 100vh;
 }
 
-/* NAVBAR */
+/* =========================================================
+   NAVBAR LIQUID GLASS - FULL WIDTH
+   ========================================================= */
+
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 30;
+  position: relative;
+  top: auto;
+  z-index: 50;
+  width: 100%;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 16px clamp(18px, 4vw, 54px);
-  background: rgba(251, 248, 239, 0.95);
-  border-bottom: 1px solid rgba(230, 222, 208, 0.9);
+  gap: 22px;
+  padding: 14px clamp(18px, 4vw, 54px);
+  border: 0;
+  border-bottom: 1px solid rgba(13, 61, 45, 0.1);
+  border-radius: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.46)
+    ),
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.9), transparent 34%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.88),
+    0 10px 34px rgba(9, 47, 34, 0.08);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  overflow: hidden;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 42%,
+    transparent 58%
+  );
+  transform: translateX(-120%) rotate(8deg);
+  animation: navbarLiquidShine 5s ease-in-out infinite;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  height: 28px;
+  background: rgba(248, 170, 60, 0.12);
+  filter: blur(18px);
+  pointer-events: none;
 }
 
 .brand-button {
-  display: flex;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   border: 0;
-  background: transparent;
+  border-radius: 999px;
+  padding: 6px 16px 6px 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.28)
+  );
   color: var(--green-950);
   text-align: left;
-  padding: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    0 10px 24px rgba(9, 47, 34, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.brand-button:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 18px 42px rgba(9, 47, 34, 0.12);
+}
+
+.brand-logo-shell {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 30% 22%,
+      rgba(255, 255, 255, 0.96),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(223, 244, 233, 0.48)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset -8px -8px 18px rgba(9, 47, 34, 0.06),
+    0 12px 28px rgba(9, 47, 34, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .brand-logo {
-  height: 52px;
-  width: auto;
+  width: 82%;
+  height: 82%;
   display: block;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
+.brand-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
 .brand-button strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--green-950);
+  white-space: nowrap;
 }
 
 .brand-button small {
+  display: block;
   color: var(--muted);
-  font-weight: 600;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -116,11 +230,83 @@ button {
 }
 
 .nav-actions {
-  display: flex;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(118px, 1fr));
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgba(13, 61, 45, 0.08);
+  border-radius: 999px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.54),
+    rgba(255, 255, 255, 0.22)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.74),
+    inset 0 -12px 30px rgba(9, 47, 34, 0.03);
+  backdrop-filter: blur(20px) saturate(165%);
+  -webkit-backdrop-filter: blur(20px) saturate(165%);
+  overflow: hidden;
+}
+
+.nav-active-orb {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc((100% - 10px) / 2);
+  height: calc(100% - 10px);
+  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at 32% 20%,
+      rgba(255, 255, 255, 0.42),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #083d2d, #16664d);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 16px 34px rgba(9, 47, 34, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.36);
+  transition:
+    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.42s ease;
+}
+
+.nav-active-orb::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.36),
+    transparent 58%
+  );
+  opacity: 0.72;
+}
+
+.nav-active-orb::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -8px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(248, 170, 60, 0.58);
+  filter: blur(9px);
+}
+
+.nav-active-orb--home {
+  transform: translateX(0);
+}
+
+.nav-active-orb--ebook {
+  transform: translateX(100%);
 }
 
 .nav-actions button,
@@ -128,36 +314,73 @@ button {
 .secondary-btn,
 .reset-btn,
 .sheet-toolbar button {
+  position: relative;
+  z-index: 2;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 999px;
-  padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.72);
+  padding: 10px 16px;
+  background: transparent;
   color: var(--green-950);
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  box-shadow: none;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    transform 0.22s ease,
+    color 0.22s ease,
+    filter 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
 }
 
-.nav-actions button:hover,
+.nav-actions button svg {
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.28s ease;
+}
+
+.nav-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.nav-actions button:hover svg {
+  transform: translateY(-1px) scale(1.12) rotate(-4deg);
+}
+
+.nav-actions button.active {
+  color: #ffffff;
+}
+
+.nav-actions button.active svg {
+  filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.26));
+}
+
+.primary-btn {
+  background: var(--green-900);
+  color: white;
+  border: 1px solid var(--green-900);
+  box-shadow: 0 14px 34px rgba(9, 47, 34, 0.16);
+}
+
+.secondary-btn,
+.reset-btn,
+.sheet-toolbar button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--green-950);
+  box-shadow: 0 12px 26px rgba(9, 47, 34, 0.08);
+}
+
 .primary-btn:hover,
 .secondary-btn:hover,
 .reset-btn:hover,
 .sheet-toolbar button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(9, 47, 34, 0.12);
-}
-
-.nav-actions button.active,
-.primary-btn {
-  background: var(--green-900);
-  color: white;
-  border-color: var(--green-900);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(9, 47, 34, 0.14);
 }
 
 .eyebrow {
@@ -172,24 +395,90 @@ button {
   font-size: 0.74rem;
 }
 
+@keyframes navbarLiquidShine {
+  0%,
+  48% {
+    transform: translateX(-120%) rotate(8deg);
+  }
+
+  72%,
+  100% {
+    transform: translateX(120%) rotate(8deg);
+  }
+}
+
 @media (max-width: 760px) {
   .navbar {
-    align-items: flex-start;
+    top: auto;
+    width: 100%;
+    margin: 0;
+    align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 0;
+  }
+
+  .brand-button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+
+  .brand-logo-shell {
+    width: 48px;
+    height: 48px;
   }
 
   .brand-logo {
-    height: 44px;
+    width: 82%;
+    height: 82%;
+  }
+
+  .brand-copy strong {
+    font-size: 0.95rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.72rem;
   }
 
   .nav-actions {
     width: 100%;
-    justify-content: flex-start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .nav-actions button {
-    flex: 1;
-    min-width: 120px;
+    min-width: 0;
+    width: 100%;
+    padding: 11px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-copy small {
+    white-space: normal;
+  }
+
+  .nav-actions button span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar::before {
+    animation: none !important;
+  }
+
+  .nav-active-orb,
+  .nav-actions button,
+  .nav-actions button svg,
+  .brand-button,
+  .primary-btn,
+  .secondary-btn,
+  .reset-btn,
+  .sheet-toolbar button {
+    transition-duration: 0.001ms !important;
   }
 }
 

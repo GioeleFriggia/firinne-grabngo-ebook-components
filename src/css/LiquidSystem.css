@@ -1,0 +1,692 @@
+/* =========================================================
+   FÍRINNE LIQUID GLASS SYSTEM
+   Global visual upgrade for the whole web app
+   ========================================================= */
+
+:root {
+  --liquid-bg: #f7fbf6;
+  --liquid-bg-soft: #eef8f1;
+  --liquid-white: rgba(255, 255, 255, 0.62);
+  --liquid-white-strong: rgba(255, 255, 255, 0.82);
+  --liquid-border: rgba(255, 255, 255, 0.62);
+  --liquid-border-green: rgba(13, 61, 45, 0.12);
+  --liquid-green-950: #062f22;
+  --liquid-green-900: #083d2d;
+  --liquid-green-800: #0d4d39;
+  --liquid-green-700: #16664d;
+  --liquid-green-500: #2f8b68;
+  --liquid-mint: #dff4e9;
+  --liquid-gold: #f8aa3c;
+  --liquid-gold-soft: rgba(248, 170, 60, 0.22);
+  --liquid-text: #10261d;
+  --liquid-muted: #64766d;
+  --liquid-shadow: 0 28px 80px rgba(9, 47, 34, 0.14);
+  --liquid-shadow-soft: 0 18px 50px rgba(9, 47, 34, 0.09);
+  --liquid-radius-xl: 36px;
+  --liquid-radius-lg: 28px;
+  --liquid-radius-md: 20px;
+}
+
+/* =========================================================
+   BACKGROUND GENERALE
+   ========================================================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at 14% 8%,
+      rgba(255, 255, 255, 0.92),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 84% 12%,
+      rgba(223, 244, 233, 0.95),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 16% 88%,
+      rgba(248, 170, 60, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #fbf8ef 0%, #edf8f1 48%, #fff6e6 100%) !important;
+  color: var(--liquid-text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+  opacity: 0.35;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto -12vw -18vh -12vw;
+  z-index: -1;
+  height: 42vh;
+  pointer-events: none;
+  background: rgba(248, 170, 60, 0.22);
+  filter: blur(70px);
+  border-radius: 999px;
+}
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 45% 55% 58% 42% / 46% 38% 62% 54%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.86),
+      transparent 22%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.34),
+      rgba(223, 244, 233, 0.46)
+    );
+  box-shadow:
+    inset 16px 16px 44px rgba(255, 255, 255, 0.48),
+    inset -20px -20px 50px rgba(9, 47, 34, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.app-shell::before {
+  width: 28vw;
+  height: 28vw;
+  left: -9vw;
+  top: 14vh;
+  opacity: 0.5;
+  animation: liquidShellFloatOne 10s ease-in-out infinite alternate;
+}
+
+.app-shell::after {
+  width: 22vw;
+  height: 22vw;
+  right: -8vw;
+  bottom: 18vh;
+  opacity: 0.42;
+  animation: liquidShellFloatTwo 12s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   NAVBAR LIQUID GLASS
+   ========================================================= */
+
+.navbar,
+.main-nav,
+.app-navbar,
+header nav {
+  backdrop-filter: blur(26px) saturate(165%);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+}
+
+.navbar {
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.38)
+  ) !important;
+  box-shadow: 0 18px 50px rgba(9, 47, 34, 0.09);
+}
+
+.navbar button,
+.navbar a,
+.main-nav button,
+.main-nav a,
+.app-navbar button,
+.app-navbar a {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.navbar button:hover,
+.navbar a:hover,
+.main-nav button:hover,
+.main-nav a:hover,
+.app-navbar button:hover,
+.app-navbar a:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TITOLI
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+  color: var(--liquid-green-950);
+}
+
+h1 {
+  letter-spacing: -0.075em;
+}
+
+h2 {
+  letter-spacing: -0.045em;
+}
+
+h3 {
+  letter-spacing: -0.03em;
+}
+
+.eyebrow,
+.small,
+.kicker {
+  color: var(--liquid-green-700);
+}
+
+/* =========================================================
+   SEZIONI / CARD GENERALI
+   ========================================================= */
+
+section,
+.card,
+.panel,
+.product-card,
+.category-card,
+.feature-card,
+.stat-card,
+.sheet-section,
+.info-tile {
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+}
+
+.card,
+.panel,
+.product-card,
+.category-card,
+.feature-card,
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--liquid-border);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(255, 255, 255, 0.42)
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.72),
+      transparent 36%
+    );
+  box-shadow: var(--liquid-shadow-soft);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+
+.card::before,
+.panel::before,
+.product-card::before,
+.category-card::before,
+.feature-card::before,
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.52) 42%,
+    transparent 58%
+  );
+  transform: translateX(-130%) rotate(8deg);
+  transition: transform 0.75s ease;
+}
+
+.card:hover,
+.panel:hover,
+.product-card:hover,
+.category-card:hover,
+.feature-card:hover,
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--liquid-shadow);
+  border-color: rgba(255, 255, 255, 0.82);
+}
+
+.card:hover::before,
+.panel:hover::before,
+.product-card:hover::before,
+.category-card:hover::before,
+.feature-card:hover::before,
+.stat-card:hover::before {
+  transform: translateX(130%) rotate(8deg);
+}
+
+/* =========================================================
+   LISTE PRODOTTI / MENU / INDEX
+   ========================================================= */
+
+.product-list,
+.products-list,
+.ebook-list,
+.menu-list,
+.range-list,
+.category-list {
+  display: grid;
+  gap: 16px;
+}
+
+.product-list-item,
+.product-row,
+.ebook-list-item,
+.menu-list-item,
+.range-list-item,
+.category-list-item,
+li.product-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--liquid-border);
+  border-radius: var(--liquid-radius-md);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.44)
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(223, 244, 233, 0.72),
+      transparent 36%
+    );
+  box-shadow: 0 16px 42px rgba(9, 47, 34, 0.08);
+  backdrop-filter: blur(20px) saturate(155%);
+  -webkit-backdrop-filter: blur(20px) saturate(155%);
+}
+
+.product-list-item::after,
+.product-row::after,
+.ebook-list-item::after,
+.menu-list-item::after,
+.range-list-item::after,
+.category-list-item::after,
+li.product-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 16px 0 16px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(13, 61, 45, 0.22),
+    transparent
+  );
+}
+
+.product-list-item:hover,
+.product-row:hover,
+.ebook-list-item:hover,
+.menu-list-item:hover,
+.range-list-item:hover,
+.category-list-item:hover,
+li.product-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 24px 70px rgba(9, 47, 34, 0.13);
+}
+
+/* =========================================================
+   LISTE TESTUALI INTERNE
+   ========================================================= */
+
+.sheet-section ul,
+.sheet-section ol,
+.product-sheet ul,
+.product-sheet ol,
+.card ul,
+.card ol,
+.panel ul,
+.panel ol {
+  list-style-position: outside;
+}
+
+.sheet-section li,
+.product-sheet li,
+.card li,
+.panel li {
+  position: relative;
+}
+
+.sheet-section ul li::marker,
+.product-sheet ul li::marker,
+.card ul li::marker,
+.panel ul li::marker {
+  color: var(--liquid-green-700);
+}
+
+.sheet-section ol li::marker,
+.product-sheet ol li::marker,
+.card ol li::marker,
+.panel ol li::marker {
+  color: var(--liquid-green-700);
+  font-weight: 900;
+}
+
+/* =========================================================
+   BOTTONI
+   ========================================================= */
+
+button,
+.button,
+.btn,
+.cta,
+a.button,
+a.btn {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  background: linear-gradient(
+    135deg,
+    rgba(13, 61, 45, 0.98),
+    rgba(22, 102, 77, 0.96)
+  );
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.26),
+    0 16px 34px rgba(9, 47, 34, 0.18);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+button::before,
+.button::before,
+.btn::before,
+.cta::before,
+a.button::before,
+a.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.38) 42%,
+    transparent 58%
+  );
+  transform: translateX(-130%) rotate(8deg);
+  transition: transform 0.65s ease;
+}
+
+button:hover,
+.button:hover,
+.btn:hover,
+.cta:hover,
+a.button:hover,
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 22px 52px rgba(9, 47, 34, 0.22);
+  filter: saturate(1.08);
+}
+
+button:hover::before,
+.button:hover::before,
+.btn:hover::before,
+.cta:hover::before,
+a.button:hover::before,
+a.btn:hover::before {
+  transform: translateX(130%) rotate(8deg);
+}
+
+/* Bottoni secondari */
+button.secondary,
+.button.secondary,
+.btn.secondary {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.78),
+    rgba(255, 255, 255, 0.42)
+  );
+  color: var(--liquid-green-900);
+  border-color: rgba(13, 61, 45, 0.12);
+}
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+input,
+select,
+textarea {
+  border: 1px solid rgba(13, 61, 45, 0.12);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(255, 255, 255, 0.58)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 26px rgba(9, 47, 34, 0.05);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(47, 139, 104, 0.55);
+  box-shadow:
+    0 0 0 4px rgba(47, 139, 104, 0.12),
+    0 14px 32px rgba(9, 47, 34, 0.08);
+}
+
+/* =========================================================
+   TAG / BADGE / ALLERGENI
+   ========================================================= */
+
+.badge,
+.tag,
+.pill,
+.allergen-tags span {
+  border: 1px solid rgba(248, 170, 60, 0.42);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 243, 216, 0.94),
+    rgba(255, 255, 255, 0.66)
+  );
+  color: #7b4c00;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 10px 24px rgba(248, 170, 60, 0.12);
+}
+
+/* =========================================================
+   PRODUCT SHEET EXTRA LIQUID
+   ========================================================= */
+
+.product-sheet {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(255, 255, 255, 0.52)
+  );
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+.sheet-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheet-header::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: 18%;
+  top: -120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.42);
+  filter: blur(18px);
+}
+
+.sheet-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sheet-section,
+.info-tile {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.58)
+  );
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+}
+
+.sheet-section:hover,
+.info-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 54px rgba(9, 47, 34, 0.1);
+}
+
+/* =========================================================
+   ANIMAZIONE ENTRATA PAGINA
+   ========================================================= */
+
+.app-shell > *:not(.liquid-intro) {
+  animation: liquidPageIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes liquidPageIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes liquidShellFloatOne {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate3d(5vw, 4vh, 0) rotate(18deg);
+  }
+}
+
+@keyframes liquidShellFloatTwo {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate3d(-5vw, -4vh, 0) rotate(-16deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .app-shell::before {
+    width: 52vw;
+    height: 52vw;
+    left: -24vw;
+  }
+
+  .app-shell::after {
+    width: 44vw;
+    height: 44vw;
+    right: -22vw;
+  }
+
+  .card,
+  .panel,
+  .product-card,
+  .category-card,
+  .feature-card,
+  .stat-card {
+    border-radius: 24px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITÀ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Non deve influenzare il PDF/stampa */
+@media print {
+  body::before,
+  body::after,
+  .app-shell::before,
+  .app-shell::after {
+    display: none !important;
+  }
+
+  .card,
+  .panel,
+  .product-card,
+  .category-card,
+  .feature-card,
+  .stat-card,
+  .sheet-section,
+  .info-tile {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transform: none !important;
+  }
+}
