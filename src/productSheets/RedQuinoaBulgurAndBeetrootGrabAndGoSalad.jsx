@@ -15,7 +15,7 @@ export const productData = {
     "600ml water or light vegetable stock",
     "350g cooked beetroot, diced",
     "1 medium carrot, grated or julienned",
-    "1 small red cheese crumbled",
+    "baby spinach",
 
     "60g toasted pumpkin seeds",
     "Handful fresh parsley, chopped",
