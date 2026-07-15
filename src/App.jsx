@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Ebook from "./pages/Ebook";
 import LiquidIntro from "./components/LiquidIntro";
 import "./css/LiquidSystem.css";
+import "./css/AsianNoodlePhoto.css";
 
 const STORAGE_KEY = "firinne-grabngo-products-v1";
 
