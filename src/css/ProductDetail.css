@@ -737,3 +737,24 @@
     color: #ffffff !important;
   }
 }
+/* Asian Noodle: riempie completamente il riquadro della foto */
+/* Solo foto Asian Noodle */
+.firinne-photo-box img[src="/images/asian-noodle-real.png"] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: none;
+}
+
+/* Stesso risultato nel PDF stampato */
+@media print {
+  .print-photo-box img[src="/images/asian-noodle-real.png"] {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: scale(1.7) !important;
+    transform-origin: center center !important;
+  }
+}
