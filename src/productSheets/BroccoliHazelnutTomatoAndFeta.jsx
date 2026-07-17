@@ -18,7 +18,7 @@ export const productData = {
     "Salt & pepper",
   ],
   method: ["Combine.", "Dress.", "Add feta last."],
-  photo: "/images/product-photo-pending.svg",
+  photo: "/images/broccoli-hazelnut.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [

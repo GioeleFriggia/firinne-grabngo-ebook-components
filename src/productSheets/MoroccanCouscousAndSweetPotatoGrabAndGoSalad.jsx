@@ -38,7 +38,7 @@ export const productData = {
     "Stir spices into couscous, cover, and let sit 5 min. Fluff with a fork.",
     "Add sweet potato, peppers, tomatoes, onion, herbs, almonds or pumpkin seeds, and dressing.",
   ],
-  photo: "/images/product-photo-pending.svg",
+  photo: "/images/moroccan-couscous-sweet-potato.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [

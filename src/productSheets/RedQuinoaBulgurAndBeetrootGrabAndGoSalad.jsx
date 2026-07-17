@@ -37,7 +37,7 @@ export const productData = {
     "Whisk dressing ingredients together.",
     "Pour dressing over salad; mix gently.",
   ],
-  photo: "/images/product-photo-pending.svg",
+  photo: "/images/red-quinoa-bulgur-beetroot.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [

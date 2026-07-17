@@ -1,5 +1,5 @@
-/* Asian Noodle photo: fill the white frame without extra zoom */
-.firinne-photo-box img[src="/images/asian-noodle-real.png"] {
+/* Asian Noodle photo */
+.firinne-photo-box img[src="/images/asian-noodle.jpg"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -8,7 +8,7 @@
 }
 
 @media print {
-  .print-photo-box img[src="/images/asian-noodle-real.png"] {
+  .print-photo-box img[src="/images/asian-noodle.jpg"] {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
