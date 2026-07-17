@@ -8,7 +8,11 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { calculateMargin } from "../utils/pricing";
-import { supplierInfo } from "../data/supplierInfo";
+import {
+  isSaladCategory,
+  saladPackagingProducts,
+  supplierInfo,
+} from "../data/supplierInfo";
 import "../css/ProductDetail.css";
 import "../css/SupplierInfo.css";
 
@@ -110,6 +114,8 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
   const unitCostValue = valueOrTbc(draft.unitCost);
   const unitSellingPriceValue = valueOrTbc(draft.unitSellingPrice);
   const marginValue = margin === null ? "TBC" : `${margin}%`;
+  const isSalad = isSaladCategory(draft.category);
+  const packagingProducts = isSalad ? saladPackagingProducts : [];
 
   return (
     <article className="product-sheet">
@@ -243,6 +249,17 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                   <strong className="supplier-name">
                     {supplierInfo.packagingSupplier.name}
                   </strong>
+
+                  {isSalad && (
+                    <ul className="supplier-code-list">
+                      {packagingProducts.map((product) => (
+                        <li key={product.code}>
+                          <strong>{product.code}</strong> – {product.item}
+                          {product.packSize ? ` – ${product.packSize}` : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </section>
               </div>
             </div>
@@ -398,6 +415,17 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="print-supplier-box">
                   <span>Packaging supplier</span>
                   <strong>{supplierInfo.packagingSupplier.name}</strong>
+
+                  {isSalad && (
+                    <ul>
+                      {packagingProducts.map((product) => (
+                        <li key={`print-packaging-${product.code}`}>
+                          <strong>{product.code}</strong> – {product.item}
+                          {product.packSize ? ` – ${product.packSize}` : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             </section>

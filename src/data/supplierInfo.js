@@ -12,3 +12,23 @@ export const supplierInfo = {
     name: "Sysco",
   },
 };
+
+export const saladPackagingProducts = [
+  {
+    code: "5014567",
+    item: "Round Black Paper Food Container 150 Series 24oz",
+    packSize: "1x300 EA",
+  },
+  {
+    code: "5014569",
+    item: "Vegware Round Black Window Lid 150 Series",
+    packSize: "1x300 EA",
+  },
+];
+
+export function isSaladCategory(category) {
+  return String(category ?? "")
+    .trim()
+    .toLowerCase()
+    .includes("salad");
+}
