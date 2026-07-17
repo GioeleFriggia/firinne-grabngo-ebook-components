@@ -1,4 +1,4 @@
-﻿import ProductSheetTemplate from "./ProductSheetTemplate";
+import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Asian Noodle Grab-and-Go Salad
@@ -38,7 +38,7 @@ export const productData = {
     "Whisk together soy sauce, rice vinegar, oils, honey, garlic, ginger, and chilli.",
     "Pour dressing over salad and mix thoroughly.",
   ],
-  photo: "/images/asian-noodle.jpg",
+  photo: "/images/asian-noodle-real.png",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [
@@ -61,4 +61,3 @@ export default function AsianNoodleGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
-

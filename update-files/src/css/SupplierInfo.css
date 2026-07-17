@@ -1,0 +1,92 @@
+.supplier-details {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.supplier-card {
+  border: 1px solid rgba(21, 78, 62, 0.18);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(248, 250, 247, 0.92);
+}
+
+.supplier-card h3 {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4b665c;
+}
+
+.supplier-name {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+  color: #173f34;
+}
+
+.supplier-code-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.supplier-code-list li + li {
+  margin-top: 5px;
+}
+
+.supplier-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.supplier-links a {
+  color: #145c48;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.print-supplier-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.print-supplier-box {
+  border: 1px solid #cbd5d0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.print-supplier-box span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.print-supplier-box strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.print-supplier-box ul {
+  margin: 5px 0;
+  padding-left: 16px;
+}
+
+.print-supplier-contact {
+  margin: 5px 0 0;
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .print-supplier-grid {
+    grid-template-columns: 1fr;
+  }
+}

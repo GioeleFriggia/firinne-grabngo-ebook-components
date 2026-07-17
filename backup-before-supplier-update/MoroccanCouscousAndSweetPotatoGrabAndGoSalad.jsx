@@ -1,4 +1,4 @@
-﻿import ProductSheetTemplate from "./ProductSheetTemplate";
+import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Moroccan Couscous & Sweet Potato Grab-and-Go Salad
@@ -58,4 +58,3 @@ export default function MoroccanCouscousAndSweetPotatoGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
-

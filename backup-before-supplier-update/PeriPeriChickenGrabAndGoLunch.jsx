@@ -1,4 +1,4 @@
-﻿import ProductSheetTemplate from "./ProductSheetTemplate";
+import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Peri–Peri Chicken Grab-and-Go Lunch
@@ -41,4 +41,3 @@ export default function PeriPeriChickenGrabAndGoLunchSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
-
