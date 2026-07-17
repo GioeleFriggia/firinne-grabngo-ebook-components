@@ -8,9 +8,7 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { calculateMargin } from "../utils/pricing";
-import { supplierInfo } from "../data/supplierInfo";
 import "../css/ProductDetail.css";
-import "../css/SupplierInfo.css";
 
 function safeArray(items) {
   return Array.isArray(items) ? items : [];
@@ -21,7 +19,7 @@ function valueOrTbc(value) {
 }
 
 function formatPrintDate() {
-  return new Intl.DateTimeFormat("en-GB", {
+  const formatted = new Intl.DateTimeFormat("en-GB", {
     year: "2-digit",
     month: "2-digit",
     day: "2-digit",
@@ -29,6 +27,8 @@ function formatPrintDate() {
     minute: "2-digit",
     hour12: false,
   }).format(new Date());
+
+  return formatted;
 }
 
 function ListSection({ title, items, ordered = false }) {
@@ -41,6 +41,7 @@ function ListSection({ title, items, ordered = false }) {
   return (
     <div className="sheet-section">
       <h2>{title}</h2>
+
       <Tag>
         {list.map((item, index) => (
           <li key={`${title}-${index}`}>{item}</li>
@@ -60,6 +61,7 @@ function PrintListSection({ title, items, ordered = false }) {
   return (
     <section className="print-card">
       <h2>{title}</h2>
+
       <Tag>
         {list.map((item, index) => (
           <li key={`print-${title}-${index}`}>{item}</li>
@@ -93,8 +95,6 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
   }
 
   function saveChanges() {
-    if (typeof updateProduct !== "function") return;
-
     updateProduct({
       ...draft,
       unitCost: draft.unitCost === "" ? "" : Number(draft.unitCost),
@@ -153,7 +153,15 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 </div>
 
                 <div className="firinne-photo-box">
-                  <img src={draft.photo} alt={draft.dishTitle} />
+                  <img
+                    src={draft.photo}
+                    alt={draft.dishTitle}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width="1200"
+                    height="800"
+                  />
                 </div>
               </div>
             </div>
@@ -163,7 +171,10 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
             <ListSection title="Ingredients" items={draft.ingredients} />
             <ListSection title="Dressing" items={draft.dressing} />
             <ListSection title="Sauce" items={draft.sauce} />
-            <ListSection title="Optional add-ins" items={draft.optionalAddIns} />
+            <ListSection
+              title="Optional add-ins"
+              items={draft.optionalAddIns}
+            />
             <ListSection
               title="Protein method"
               items={draft.proteinMethod}
@@ -194,6 +205,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           {safeArray(draft.notes).length > 0 && (
             <section className="sheet-section notes-box">
               <h2>Source notes</h2>
+
               <ul>
                 {safeArray(draft.notes).map((note, index) => (
                   <li key={`note-${index}`}>{note}</li>
@@ -207,43 +219,33 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <section className="sheet-grid bottom-grid">
             <div className="sheet-section packaging-box">
               <h2>
-                <Package size={18} /> Suppliers & packaging
+                <Package size={18} /> Packaging codes and label
               </h2>
 
-              <div className="supplier-details">
-                <section className="supplier-card">
-                  <h3>Label supplier</h3>
-                  <strong className="supplier-name">
-                    {supplierInfo.labelSupplier.name}
-                  </strong>
+              <div className="packaging-status">
+                <span>Packaging code</span>
+                <strong>Pending confirmation</strong>
+              </div>
 
-                  <ul className="supplier-code-list">
-                    {safeArray(supplierInfo.labelSupplier.codes).map((code) => (
-                      <li key={code}>{code}</li>
-                    ))}
-                  </ul>
+              <div className="packaging-status">
+                <span>Label text</span>
+                <strong>Pending confirmation</strong>
+              </div>
 
-                  <div className="supplier-links">
-                    <a href={`mailto:${supplierInfo.labelSupplier.email}`}>
-                      {supplierInfo.labelSupplier.email}
-                    </a>
+              <div className="label-reference">
+                <p className="reference-title">Reference data available:</p>
+                <p>
+                  Dish title, ingredients, allergens and sauce/dressing
+                  information are available from the source material.
+                </p>
+              </div>
 
-                    <a
-                      href={supplierInfo.labelSupplier.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Cafe Brands software
-                    </a>
-                  </div>
-                </section>
-
-                <section className="supplier-card">
-                  <h3>Packaging supplier</h3>
-                  <strong className="supplier-name">
-                    {supplierInfo.packagingSupplier.name}
-                  </strong>
-                </section>
+              <div className="example-label">
+                <span>Example format only</span>
+                <p>
+                  Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included |
+                  Verify supplier declarations before final labelling.
+                </p>
               </div>
             </div>
 
@@ -256,6 +258,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="info-tile">
                   <Euro size={20} />
                   <span>Unit cost</span>
+
                   <input
                     type="number"
                     step="0.01"
@@ -270,6 +273,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="info-tile">
                   <Euro size={20} />
                   <span>Unit selling price</span>
+
                   <input
                     type="number"
                     step="0.01"
@@ -296,7 +300,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <header className="print-topbar">
             <span>{printDate}</span>
             <span>Firinne Grab n Go Range</span>
-            <span />
+            <span></span>
           </header>
 
           <section className="print-hero">
@@ -318,7 +322,14 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 </div>
 
                 <div className="print-photo-box">
-                  <img src={draft.photo} alt={draft.dishTitle} />
+                  <img
+                    src={draft.photo}
+                    alt={draft.dishTitle}
+                    loading="lazy"
+                    decoding="async"
+                    width="1200"
+                    height="800"
+                  />
                 </div>
               </div>
             </div>
@@ -368,37 +379,39 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <header className="print-topbar">
             <span>{printDate}</span>
             <span>Firinne Grab n Go Range</span>
-            <span />
+            <span></span>
           </header>
 
           <section className="print-grid print-second-grid">
             <section className="print-card print-packaging-card">
               <h2>
-                <Package size={14} /> Suppliers & packaging
+                <Package size={14} /> Packaging codes and label
               </h2>
 
-              <div className="print-supplier-grid">
-                <div className="print-supplier-box">
-                  <span>Label supplier</span>
-                  <strong>{supplierInfo.labelSupplier.name}</strong>
+              <div className="print-status">
+                <span>Packaging code</span>
+                <strong>Pending confirmation</strong>
+              </div>
 
-                  <ul>
-                    {safeArray(supplierInfo.labelSupplier.codes).map((code) => (
-                      <li key={`print-${code}`}>{code}</li>
-                    ))}
-                  </ul>
+              <div className="print-status">
+                <span>Label text</span>
+                <strong>Pending confirmation</strong>
+              </div>
 
-                  <p className="print-supplier-contact">
-                    {supplierInfo.labelSupplier.email}
-                    <br />
-                    {supplierInfo.labelSupplier.website}
-                  </p>
-                </div>
+              <div className="print-reference-box">
+                <strong>Reference data available:</strong>
+                <p>
+                  Dish title, ingredients, allergens and sauce/dressing
+                  information are available from the source material.
+                </p>
+              </div>
 
-                <div className="print-supplier-box">
-                  <span>Packaging supplier</span>
-                  <strong>{supplierInfo.packagingSupplier.name}</strong>
-                </div>
+              <div className="print-example-box">
+                <strong>Example format only</strong>
+                <p>
+                  Protein Lunch Box | Keep chilled ≤5°C | Sauce pot included |
+                  Verify supplier declarations before final labelling.
+                </p>
               </div>
             </section>
 

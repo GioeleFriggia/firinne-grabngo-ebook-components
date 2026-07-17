@@ -1,25 +1,31 @@
-AGGIORNAMENTO PACKAGING — SOLO INSALATE
+CORREZIONE DEFINITIVA FIRINNE
 
-Codici aggiunti:
-5014567 – Round Black Paper Food Container 150 Series 24oz – 1x300 EA
-5014569 – Vegware Round Black Window Lid 150 Series – 1x300 EA
+Questo ZIP contiene 3 file corretti:
 
-I codici compariranno soltanto nei prodotti della categoria Salads,
-sia nella scheda normale sia nella stampa/PDF.
+1. src/productSheets/ProductSheetTemplate.jsx
+2. src/data/supplierInfo.js
+3. src/css/SupplierInfo.css
 
-PASSAGGI
+COME INSTALLARE
 
-1. Estrai tutto direttamente dentro:
+1. Estrai lo ZIP.
+2. Copia la cartella "src" dentro la cartella principale del progetto.
+3. Quando Windows chiede se vuoi sostituire i file, scegli:
+   "Sostituisci i file nella destinazione".
+
+Percorso progetto:
 C:\Users\gioel\Desktop\firinne-grabngo-ebook-components
 
-2. Nel terminale di VS Code:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+Poi nel terminale di VS Code esegui:
 
-3. Poi:
-.\apply-salad-packaging-update.ps1
+Ctrl + C
 
-4. Avvia:
+Remove-Item -Recurse -Force ".\node_modules\.vite" -ErrorAction SilentlyContinue
+
 npm run dev
 
-5. Nel browser:
-Ctrl + F5
+Questo fix rimuove completamente:
+- la stringa errata `r`n
+- l'import inesistente getPackagingCodes
+- ogni chiamata a getPackagingCodes
+- i caratteri corrotti â€“

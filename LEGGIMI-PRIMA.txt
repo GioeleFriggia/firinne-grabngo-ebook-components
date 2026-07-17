@@ -1,0 +1,49 @@
+FIRINNE — PACCHETTO COMPLETO DI OTTIMIZZAZIONE
+
+MODIFICHE INCLUSE
+- Intro iniziale ridotta da oltre 3 secondi a circa 1 secondo.
+- Intro mostrata una sola volta per scheda/sessione del browser.
+- Effetti blur e animazioni GPU alleggeriti, soprattutto su mobile.
+- Pagina eBook caricata con React.lazy e Suspense.
+- Lazy loading nativo delle immagini nelle schede laterali.
+- Decodifica asincrona e priorità corretta delle immagini.
+- 7 immagini convertite in WebP.
+- 7 miniature WebP separate per la lista prodotti.
+- Collegamenti photo e thumbnail aggiornati nei prodotti.
+- Nuova chiave localStorage per evitare vecchi percorsi salvati.
+- Cache Vercel di lunga durata per immagini e asset.
+- Pulizia automatica di public/public, script vecchi e foto duplicate.
+- Backup automatico dei file sostituiti.
+
+INSTALLAZIONE PIÙ SEMPLICE
+1. Estrai completamente questo ZIP.
+2. Fai doppio clic su:
+   INSTALLA-OTTIMIZZAZIONE.bat
+3. Lo script cerca automaticamente:
+   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components
+4. Al termine apri il terminale del progetto ed esegui:
+   npm run dev
+5. Nel browser premi Ctrl + F5.
+
+INSTALLAZIONE MANUALE
+1. Copia tutto il contenuto della cartella "payload" dentro:
+   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components
+2. Conferma la sostituzione dei file.
+3. Elimina manualmente:
+   public\public
+   public\README.txt
+   public\install-product-photos.ps1
+   apply-update.ps1
+4. Esegui:
+   npm run build
+   npm run dev
+
+COMMIT E PUSH
+git add .
+git commit -m "Ottimizza caricamento app e immagini"
+git pull --rebase origin main
+git push origin main
+
+NOTA
+Lo script crea automaticamente una cartella backup-performance-DATA-ORA
+dentro il progetto prima di sostituire i file.

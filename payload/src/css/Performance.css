@@ -1,0 +1,113 @@
+/*
+ * Firinne performance overrides
+ * Loaded after the existing styles so it can safely reduce expensive effects.
+ */
+
+.app-loading {
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  color: var(--green-900);
+  font-weight: 900;
+}
+
+.app-loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid rgba(9, 47, 34, 0.14);
+  border-top-color: var(--green-700);
+  border-radius: 50%;
+  animation: firinneSpinner 0.7s linear infinite;
+}
+
+@keyframes firinneSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The intro is now on screen for about one second, so avoid costly filters. */
+.liquid-intro {
+  animation-duration: 0.34s !important;
+  will-change: opacity, transform;
+}
+
+.liquid-intro--hidden {
+  animation-duration: 0.34s !important;
+}
+
+.liquid-noise {
+  opacity: 0.1 !important;
+  animation: none !important;
+}
+
+.liquid-orb {
+  filter: none !important;
+  backdrop-filter: blur(10px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(125%) !important;
+  will-change: transform;
+}
+
+.liquid-glass-card {
+  backdrop-filter: blur(18px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(145%) !important;
+  animation-duration: 0.54s !important;
+}
+
+.liquid-glass-card::before {
+  animation-duration: 0.72s !important;
+}
+
+.liquid-loader span {
+  animation-duration: 0.55s !important;
+  animation-delay: 0.08s !important;
+}
+
+/* Render off-screen cards only when the browser gets near them. */
+.product-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 108px;
+}
+
+.product-card img {
+  aspect-ratio: 1 / 1;
+}
+
+.product-card img.real-product-photo {
+  object-fit: cover;
+  padding: 0;
+}
+
+.firinne-photo-box img,
+.print-photo-box img {
+  aspect-ratio: 3 / 2;
+}
+
+/* Lower GPU use further on phones/tablets. */
+@media (max-width: 900px), (pointer: coarse) {
+  .liquid-orb-three,
+  .liquid-orb-four {
+    display: none !important;
+  }
+
+  .liquid-orb {
+    backdrop-filter: blur(5px) saturate(115%) !important;
+    -webkit-backdrop-filter: blur(5px) saturate(115%) !important;
+  }
+
+  .liquid-glass-card {
+    backdrop-filter: blur(10px) saturate(125%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(125%) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-intro,
+  .liquid-intro *,
+  .app-loading-spinner {
+    animation: none !important;
+    transition: none !important;
+  }
+}
