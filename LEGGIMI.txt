@@ -1,0 +1,25 @@
+AGGIORNAMENTO PACKAGING — SOLO INSALATE
+
+Codici aggiunti:
+5014567 – Round Black Paper Food Container 150 Series 24oz – 1x300 EA
+5014569 – Vegware Round Black Window Lid 150 Series – 1x300 EA
+
+I codici compariranno soltanto nei prodotti della categoria Salads,
+sia nella scheda normale sia nella stampa/PDF.
+
+PASSAGGI
+
+1. Estrai tutto direttamente dentro:
+C:\Users\gioel\Desktop\firinne-grabngo-ebook-components
+
+2. Nel terminale di VS Code:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+3. Poi:
+.\apply-salad-packaging-update.ps1
+
+4. Avvia:
+npm run dev
+
+5. Nel browser:
+Ctrl + F5

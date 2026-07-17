@@ -1,4 +1,4 @@
-import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Roast Potato & Chorizo Grab-and-Go Salad
@@ -31,7 +31,7 @@ export const productData = {
     "Combine potatoes, chorizo, peppers, onion, parsley, and nuts/seeds.",
     "Whisk dressing to salad.",
   ],
-  photo: "/images/product-photo-pending.svg",
+  photo: "/images/roast-potato-chorizo.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [
@@ -51,3 +51,5 @@ export default function RoastPotatoAndChorizoGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
+
+

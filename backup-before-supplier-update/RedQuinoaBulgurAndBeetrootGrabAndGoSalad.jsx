@@ -1,4 +1,4 @@
-import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Red Quinoa, Bulgur & Beetroot Grab-and-Go Salad
@@ -58,3 +58,5 @@ export default function RedQuinoaBulgurAndBeetrootGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
+
+

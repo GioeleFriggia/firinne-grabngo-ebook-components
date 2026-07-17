@@ -1,4 +1,4 @@
-import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Gochujang Roast Salmon Grab-and-Go Lunch
@@ -25,7 +25,7 @@ export const productData = {
   method: [
     "Assemble the protein with listed salads and sauce, then label and chill ≤5°C.",
   ],
-  photo: "/images/Gochujang Roast Salmon Grab-and-Go Lunch.jpg",
+  photo: "/images/gochujang-salmon.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [
@@ -47,3 +47,5 @@ export default function GochujangRoastSalmonGrabAndGoLunchSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
+
+

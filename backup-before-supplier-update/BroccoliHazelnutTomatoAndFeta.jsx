@@ -1,4 +1,4 @@
-import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Broccoli, Hazelnut, Tomato & Feta
@@ -18,7 +18,7 @@ export const productData = {
     "Salt & pepper",
   ],
   method: ["Combine.", "Dress.", "Add feta last."],
-  photo: "/images/broccoli-hazelnut.jpg",
+  photo: "/images/broccoli-hazelnut-feta.jpg",
   unitCost: "",
   unitSellingPrice: "",
   allergens: [
@@ -38,3 +38,5 @@ export default function BroccoliHazelnutTomatoAndFetaSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
+
+
