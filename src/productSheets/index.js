@@ -24,32 +24,36 @@ import TunaAndSweetcornMeltOnBaguetteSheet, { productData as TunaAndSweetcornMel
 import FalafelAndTahiniCrunchOnMultigrainBagelVeganSheet, { productData as FalafelAndTahiniCrunchOnMultigrainBagelVeganData } from './FalafelAndTahiniCrunchOnMultigrainBagelVegan';
 import SmokedSalmonCreamCheeseAndDillOnRyeSheet, { productData as SmokedSalmonCreamCheeseAndDillOnRyeData } from './SmokedSalmonCreamCheeseAndDillOnRye';
 
-export const productSheets = [
-  { id: 1, data: RedQuinoaBulgurAndBeetrootGrabAndGoSaladData, Component: RedQuinoaBulgurAndBeetrootGrabAndGoSaladSheet },
-  { id: 2, data: BroccoliHazelnutTomatoAndFetaData, Component: BroccoliHazelnutTomatoAndFetaSheet },
-  { id: 3, data: CarrotAndSeedGrabAndGoSaladData, Component: CarrotAndSeedGrabAndGoSaladSheet },
-  { id: 4, data: AsianNoodleGrabAndGoSaladData, Component: AsianNoodleGrabAndGoSaladSheet },
-  { id: 5, data: MoroccanCouscousAndSweetPotatoGrabAndGoSaladData, Component: MoroccanCouscousAndSweetPotatoGrabAndGoSaladSheet },
-  { id: 6, data: RoastPotatoAndChorizoGrabAndGoSaladData, Component: RoastPotatoAndChorizoGrabAndGoSaladSheet },
-  { id: 7, data: OrzoPastaAndRoastedRedPepperData, Component: OrzoPastaAndRoastedRedPepperSheet },
-  { id: 8, data: GoatsCheeseAndCandiedWalnutData, Component: GoatsCheeseAndCandiedWalnutSheet },
-  { id: 9, data: CeasarSaladData, Component: CeasarSaladSheet },
-  { id: 10, data: SatayCrunchData, Component: SatayCrunchSheet },
-  { id: 11, data: CharredChickenTacoSaladData, Component: CharredChickenTacoSaladSheet },
-  { id: 12, data: TandooriChickenGrabAndGoLunchData, Component: TandooriChickenGrabAndGoLunchSheet },
-  { id: 13, data: HalloumiSteakGrabAndGoLunchData, Component: HalloumiSteakGrabAndGoLunchSheet },
-  { id: 14, data: GochujangRoastSalmonGrabAndGoLunchData, Component: GochujangRoastSalmonGrabAndGoLunchSheet },
-  { id: 15, data: MisoLimeChickenGrabAndGoLunchData, Component: MisoLimeChickenGrabAndGoLunchSheet },
-  { id: 16, data: PeriPeriChickenGrabAndGoLunchData, Component: PeriPeriChickenGrabAndGoLunchSheet },
-  { id: 17, data: FalafelGrabAndGoLunchData, Component: FalafelGrabAndGoLunchSheet },
-  { id: 18, data: RoastChickenCaesarOnCiabattaData, Component: RoastChickenCaesarOnCiabattaSheet },
-  { id: 19, data: MediterraneanHalloumiAndPestoOnTomatoFocacciaVData, Component: MediterraneanHalloumiAndPestoOnTomatoFocacciaVSheet },
-  { id: 20, data: KoreanStyleBeefBulgogiWrapData, Component: KoreanStyleBeefBulgogiWrapSheet },
-  { id: 21, data: TunaAndSweetcornMeltOnBaguetteData, Component: TunaAndSweetcornMeltOnBaguetteSheet },
-  { id: 22, data: FalafelAndTahiniCrunchOnMultigrainBagelVeganData, Component: FalafelAndTahiniCrunchOnMultigrainBagelVeganSheet },
-  { id: 23, data: SmokedSalmonCreamCheeseAndDillOnRyeData, Component: SmokedSalmonCreamCheeseAndDillOnRyeSheet }
+// Tutti i prodotti restano nel codice.
+// La proprietà visible controlla soltanto se il prodotto appare nell'eBook.
+export const allProductSheets = [
+  { id: 1, visible: true, data: RedQuinoaBulgurAndBeetrootGrabAndGoSaladData, Component: RedQuinoaBulgurAndBeetrootGrabAndGoSaladSheet },
+  { id: 2, visible: true, data: BroccoliHazelnutTomatoAndFetaData, Component: BroccoliHazelnutTomatoAndFetaSheet },
+  { id: 3, visible: true, data: CarrotAndSeedGrabAndGoSaladData, Component: CarrotAndSeedGrabAndGoSaladSheet },
+  { id: 4, visible: true, data: AsianNoodleGrabAndGoSaladData, Component: AsianNoodleGrabAndGoSaladSheet },
+  { id: 5, visible: true, data: MoroccanCouscousAndSweetPotatoGrabAndGoSaladData, Component: MoroccanCouscousAndSweetPotatoGrabAndGoSaladSheet },
+  { id: 6, visible: true, data: RoastPotatoAndChorizoGrabAndGoSaladData, Component: RoastPotatoAndChorizoGrabAndGoSaladSheet },
+  { id: 7, visible: true, data: OrzoPastaAndRoastedRedPepperData, Component: OrzoPastaAndRoastedRedPepperSheet },
+  { id: 8, visible: false, data: GoatsCheeseAndCandiedWalnutData, Component: GoatsCheeseAndCandiedWalnutSheet },
+  { id: 9, visible: true, data: CeasarSaladData, Component: CeasarSaladSheet },
+  { id: 10, visible: false, data: SatayCrunchData, Component: SatayCrunchSheet },
+  { id: 11, visible: false, data: CharredChickenTacoSaladData, Component: CharredChickenTacoSaladSheet },
+  { id: 12, visible: false, data: TandooriChickenGrabAndGoLunchData, Component: TandooriChickenGrabAndGoLunchSheet },
+  { id: 13, visible: false, data: HalloumiSteakGrabAndGoLunchData, Component: HalloumiSteakGrabAndGoLunchSheet },
+  { id: 14, visible: true, data: GochujangRoastSalmonGrabAndGoLunchData, Component: GochujangRoastSalmonGrabAndGoLunchSheet },
+  { id: 15, visible: false, data: MisoLimeChickenGrabAndGoLunchData, Component: MisoLimeChickenGrabAndGoLunchSheet },
+  { id: 16, visible: true, data: PeriPeriChickenGrabAndGoLunchData, Component: PeriPeriChickenGrabAndGoLunchSheet },
+  { id: 17, visible: true, data: FalafelGrabAndGoLunchData, Component: FalafelGrabAndGoLunchSheet },
+  { id: 18, visible: false, data: RoastChickenCaesarOnCiabattaData, Component: RoastChickenCaesarOnCiabattaSheet },
+  { id: 19, visible: false, data: MediterraneanHalloumiAndPestoOnTomatoFocacciaVData, Component: MediterraneanHalloumiAndPestoOnTomatoFocacciaVSheet },
+  { id: 20, visible: false, data: KoreanStyleBeefBulgogiWrapData, Component: KoreanStyleBeefBulgogiWrapSheet },
+  { id: 21, visible: false, data: TunaAndSweetcornMeltOnBaguetteData, Component: TunaAndSweetcornMeltOnBaguetteSheet },
+  { id: 22, visible: false, data: FalafelAndTahiniCrunchOnMultigrainBagelVeganData, Component: FalafelAndTahiniCrunchOnMultigrainBagelVeganSheet },
+  { id: 23, visible: false, data: SmokedSalmonCreamCheeseAndDillOnRyeData, Component: SmokedSalmonCreamCheeseAndDillOnRyeSheet }
 ];
 
+// Solo questi prodotti vengono mostrati nelle liste e nelle pagine dell'eBook.
+export const productSheets = allProductSheets.filter((sheet) => sheet.visible);
 export const products = productSheets.map((sheet) => sheet.data);
 
 export function getProductSheetComponent(productId) {

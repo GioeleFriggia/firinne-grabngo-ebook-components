@@ -8,11 +8,7 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { calculateMargin } from "../utils/pricing";
-import {
-  isSaladCategory,
-  saladPackagingProducts,
-  supplierInfo,
-} from "../data/supplierInfo";
+import { supplierInfo } from "../data/supplierInfo";
 import "../css/ProductDetail.css";
 import "../css/SupplierInfo.css";
 
@@ -24,8 +20,27 @@ function valueOrTbc(value) {
   return value === null || value === undefined || value === "" ? "TBC" : value;
 }
 
+
+function getAllergenNames(items) {
+  const names = safeArray(items)
+    .map((allergen) => {
+      if (typeof allergen !== "string") return "";
+
+      return allergen
+        .replace(
+          /^\s*(?:Contains?|Optional\s*\/\s*May\s+contain|May\s+contain|Optional)\s*:\s*/i,
+          ""
+        )
+        .split(/\s+(?:—|–|-)\s+/)[0]
+        .trim();
+    })
+    .filter(Boolean);
+
+  return [...new Set(names)];
+}
+
 function formatPrintDate() {
-  return new Intl.DateTimeFormat("en-GB", {
+  const formatted = new Intl.DateTimeFormat("en-GB", {
     year: "2-digit",
     month: "2-digit",
     day: "2-digit",
@@ -33,6 +48,8 @@ function formatPrintDate() {
     minute: "2-digit",
     hour12: false,
   }).format(new Date());
+
+  return formatted;
 }
 
 function ListSection({ title, items, ordered = false }) {
@@ -45,6 +62,7 @@ function ListSection({ title, items, ordered = false }) {
   return (
     <div className="sheet-section">
       <h2>{title}</h2>
+
       <Tag>
         {list.map((item, index) => (
           <li key={`${title}-${index}`}>{item}</li>
@@ -64,6 +82,7 @@ function PrintListSection({ title, items, ordered = false }) {
   return (
     <section className="print-card">
       <h2>{title}</h2>
+
       <Tag>
         {list.map((item, index) => (
           <li key={`print-${title}-${index}`}>{item}</li>
@@ -97,8 +116,6 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
   }
 
   function saveChanges() {
-    if (typeof updateProduct !== "function") return;
-
     updateProduct({
       ...draft,
       unitCost: draft.unitCost === "" ? "" : Number(draft.unitCost),
@@ -114,8 +131,6 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
   const unitCostValue = valueOrTbc(draft.unitCost);
   const unitSellingPriceValue = valueOrTbc(draft.unitSellingPrice);
   const marginValue = margin === null ? "TBC" : `${margin}%`;
-  const isSalad = isSaladCategory(draft.category);
-  const packagingProducts = isSalad ? saladPackagingProducts : [];
 
   return (
     <article className="product-sheet">
@@ -169,7 +184,10 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
             <ListSection title="Ingredients" items={draft.ingredients} />
             <ListSection title="Dressing" items={draft.dressing} />
             <ListSection title="Sauce" items={draft.sauce} />
-            <ListSection title="Optional add-ins" items={draft.optionalAddIns} />
+            <ListSection
+              title="Optional add-ins"
+              items={draft.optionalAddIns}
+            />
             <ListSection
               title="Protein method"
               items={draft.proteinMethod}
@@ -185,7 +203,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
               </h2>
 
               <div className="allergen-tags">
-                {safeArray(draft.allergens).map((allergen, index) => (
+                {getAllergenNames(draft.allergens).map((allergen, index) => (
                   <span key={`${allergen}-${index}`}>{allergen}</span>
                 ))}
               </div>
@@ -200,6 +218,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           {safeArray(draft.notes).length > 0 && (
             <section className="sheet-section notes-box">
               <h2>Source notes</h2>
+
               <ul>
                 {safeArray(draft.notes).map((note, index) => (
                   <li key={`note-${index}`}>{note}</li>
@@ -224,7 +243,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                   </strong>
 
                   <ul className="supplier-code-list">
-                    {safeArray(supplierInfo.labelSupplier.codes).map((code) => (
+                    {supplierInfo.labelSupplier.codes.map((code) => (
                       <li key={code}>{code}</li>
                     ))}
                   </ul>
@@ -233,7 +252,6 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                     <a href={`mailto:${supplierInfo.labelSupplier.email}`}>
                       {supplierInfo.labelSupplier.email}
                     </a>
-
                     <a
                       href={supplierInfo.labelSupplier.website}
                       target="_blank"
@@ -249,21 +267,9 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                   <strong className="supplier-name">
                     {supplierInfo.packagingSupplier.name}
                   </strong>
-
-                  {isSalad && (
-                    <ul className="supplier-code-list">
-                      {packagingProducts.map((product) => (
-                        <li key={product.code}>
-                          <strong>{product.code}</strong> – {product.item}
-                          {product.packSize ? ` – ${product.packSize}` : ""}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </section>
               </div>
             </div>
-
             <div className="sheet-section costing-box">
               <h2>
                 <Euro size={18} /> Costing information
@@ -273,6 +279,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="info-tile">
                   <Euro size={20} />
                   <span>Unit cost</span>
+
                   <input
                     type="number"
                     step="0.01"
@@ -287,6 +294,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="info-tile">
                   <Euro size={20} />
                   <span>Unit selling price</span>
+
                   <input
                     type="number"
                     step="0.01"
@@ -313,7 +321,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <header className="print-topbar">
             <span>{printDate}</span>
             <span>Firinne Grab n Go Range</span>
-            <span />
+            <span></span>
           </header>
 
           <section className="print-hero">
@@ -368,7 +376,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
               </h2>
 
               <div className="print-allergen-tags">
-                {safeArray(draft.allergens).map((allergen, index) => (
+                {getAllergenNames(draft.allergens).map((allergen, index) => (
                   <span key={`print-allergen-${index}`}>{allergen}</span>
                 ))}
               </div>
@@ -385,7 +393,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
           <header className="print-topbar">
             <span>{printDate}</span>
             <span>Firinne Grab n Go Range</span>
-            <span />
+            <span></span>
           </header>
 
           <section className="print-grid print-second-grid">
@@ -400,7 +408,7 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                   <strong>{supplierInfo.labelSupplier.name}</strong>
 
                   <ul>
-                    {safeArray(supplierInfo.labelSupplier.codes).map((code) => (
+                    {supplierInfo.labelSupplier.codes.map((code) => (
                       <li key={`print-${code}`}>{code}</li>
                     ))}
                   </ul>
@@ -415,21 +423,9 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
                 <div className="print-supplier-box">
                   <span>Packaging supplier</span>
                   <strong>{supplierInfo.packagingSupplier.name}</strong>
-
-                  {isSalad && (
-                    <ul>
-                      {packagingProducts.map((product) => (
-                        <li key={`print-packaging-${product.code}`}>
-                          <strong>{product.code}</strong> – {product.item}
-                          {product.packSize ? ` – ${product.packSize}` : ""}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </div>
               </div>
             </section>
-
             <section className="print-card print-costing-card">
               <h2>
                 <Euro size={14} /> Costing information
@@ -460,3 +456,5 @@ export default function ProductSheetTemplate({ product, updateProduct }) {
     </article>
   );
 }
+
+
