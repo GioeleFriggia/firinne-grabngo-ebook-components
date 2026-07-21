@@ -1,0 +1,192 @@
+[1mdiff --git a/LEGGIMI-PRIMA.txt b/LEGGIMI-PRIMA.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 5dd1494..0000000[m
+[1m--- a/LEGGIMI-PRIMA.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,49 +0,0 @@[m
+[31m-FIRINNE — PACCHETTO COMPLETO DI OTTIMIZZAZIONE[m
+[31m-[m
+[31m-MODIFICHE INCLUSE[m
+[31m-- Intro iniziale ridotta da oltre 3 secondi a circa 1 secondo.[m
+[31m-- Intro mostrata una sola volta per scheda/sessione del browser.[m
+[31m-- Effetti blur e animazioni GPU alleggeriti, soprattutto su mobile.[m
+[31m-- Pagina eBook caricata con React.lazy e Suspense.[m
+[31m-- Lazy loading nativo delle immagini nelle schede laterali.[m
+[31m-- Decodifica asincrona e priorità corretta delle immagini.[m
+[31m-- 7 immagini convertite in WebP.[m
+[31m-- 7 miniature WebP separate per la lista prodotti.[m
+[31m-- Collegamenti photo e thumbnail aggiornati nei prodotti.[m
+[31m-- Nuova chiave localStorage per evitare vecchi percorsi salvati.[m
+[31m-- Cache Vercel di lunga durata per immagini e asset.[m
+[31m-- Pulizia automatica di public/public, script vecchi e foto duplicate.[m
+[31m-- Backup automatico dei file sostituiti.[m
+[31m-[m
+[31m-INSTALLAZIONE PIÙ SEMPLICE[m
+[31m-1. Estrai completamente questo ZIP.[m
+[31m-2. Fai doppio clic su:[m
+[31m-   INSTALLA-OTTIMIZZAZIONE.bat[m
+[31m-3. Lo script cerca automaticamente:[m
+[31m-   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components[m
+[31m-4. Al termine apri il terminale del progetto ed esegui:[m
+[31m-   npm run dev[m
+[31m-5. Nel browser premi Ctrl + F5.[m
+[31m-[m
+[31m-INSTALLAZIONE MANUALE[m
+[31m-1. Copia tutto il contenuto della cartella "payload" dentro:[m
+[31m-   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components[m
+[31m-2. Conferma la sostituzione dei file.[m
+[31m-3. Elimina manualmente:[m
+[31m-   public\public[m
+[31m-   public\README.txt[m
+[31m-   public\install-product-photos.ps1[m
+[31m-   apply-update.ps1[m
+[31m-4. Esegui:[m
+[31m-   npm run build[m
+[31m-   npm run dev[m
+[31m-[m
+[31m-COMMIT E PUSH[m
+[31m-git add .[m
+[31m-git commit -m "Ottimizza caricamento app e immagini"[m
+[31m-git pull --rebase origin main[m
+[31m-git push origin main[m
+[31m-[m
+[31m-NOTA[m
+[31m-Lo script crea automaticamente una cartella backup-performance-DATA-ORA[m
+[31m-dentro il progetto prima di sostituire i file.[m
+[1mdiff --git a/LEGGIMI.txt b/LEGGIMI.txt[m
+[1mdeleted file mode 100644[m
+[1mindex ef3697d..0000000[m
+[1m--- a/LEGGIMI.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,20 +0,0 @@[m
+[31m-FIX CODICI SYSCO SOLO SALAD[m
+[31m-[m
+[31m-Sostituisci nel progetto questi due file:[m
+[31m-[m
+[31m-src/productSheets/ProductSheetTemplate.jsx[m
+[31m-src/data/supplierInfo.js[m
+[31m-[m
+[31m-I codici:[m
+[31m-5014567 – Round Black Paper Food Container 150 Series 24oz – 1x300 EA[m
+[31m-5014569 – Vegware Round Black Window Lid 150 Series – 1x300 EA[m
+[31m-[m
+[31m-appaiono solo quando draft.category contiene la parola "salad"[m
+[31m-(esempi: Salad, Salads, SALAD).[m
+[31m-[m
+[31m-Dopo la sostituzione:[m
+[31m-1. Ferma Vite con Ctrl + C[m
+[31m-2. Esegui:[m
+[31m-   Remove-Item -Recurse -Force ".\node_modules\.vite" -ErrorAction SilentlyContinue[m
+[31m-3. Esegui:[m
+[31m-   npm run dev[m
+[1mdiff --git a/REPORT-IMMAGINI.txt b/REPORT-IMMAGINI.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 5ffe2b9..0000000[m
+[1m--- a/REPORT-IMMAGINI.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,9 +0,0 @@[m
+[31m-REPORT IMMAGINI WEBP[m
+[31m-[m
+[31m-asian-noodle: full 1200x800 52.7 KB | thumb 320x213 5.9 KB[m
+[31m-broccoli-hazelnut-tomato-feta: full 1200x800 44.6 KB | thumb 320x213 3.9 KB[m
+[31m-gochujang-roast-salmon: full 1200x800 48.9 KB | thumb 320x213 5.3 KB[m
+[31m-moroccan-couscous-sweet-potato: full 1200x800 55.9 KB | thumb 320x213 4.5 KB[m
+[31m-peri-peri-chicken: full 1200x800 39.8 KB | thumb 320x213 5.0 KB[m
+[31m-red-quinoa-bulgur-beetroot: full 1200x800 47.1 KB | thumb 320x213 5.1 KB[m
+[31m-roast-potato-chorizo: full 1200x800 37.7 KB | thumb 320x213 4.1 KB[m
+[1mdiff --git a/LEGGIMI-PRIMA.txt b/LEGGIMI-PRIMA.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 5dd1494..0000000[m
+[1m--- a/LEGGIMI-PRIMA.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,49 +0,0 @@[m
+[31m-FIRINNE — PACCHETTO COMPLETO DI OTTIMIZZAZIONE[m
+[31m-[m
+[31m-MODIFICHE INCLUSE[m
+[31m-- Intro iniziale ridotta da oltre 3 secondi a circa 1 secondo.[m
+[31m-- Intro mostrata una sola volta per scheda/sessione del browser.[m
+[31m-- Effetti blur e animazioni GPU alleggeriti, soprattutto su mobile.[m
+[31m-- Pagina eBook caricata con React.lazy e Suspense.[m
+[31m-- Lazy loading nativo delle immagini nelle schede laterali.[m
+[31m-- Decodifica asincrona e priorità corretta delle immagini.[m
+[31m-- 7 immagini convertite in WebP.[m
+[31m-- 7 miniature WebP separate per la lista prodotti.[m
+[31m-- Collegamenti photo e thumbnail aggiornati nei prodotti.[m
+[31m-- Nuova chiave localStorage per evitare vecchi percorsi salvati.[m
+[31m-- Cache Vercel di lunga durata per immagini e asset.[m
+[31m-- Pulizia automatica di public/public, script vecchi e foto duplicate.[m
+[31m-- Backup automatico dei file sostituiti.[m
+[31m-[m
+[31m-INSTALLAZIONE PIÙ SEMPLICE[m
+[31m-1. Estrai completamente questo ZIP.[m
+[31m-2. Fai doppio clic su:[m
+[31m-   INSTALLA-OTTIMIZZAZIONE.bat[m
+[31m-3. Lo script cerca automaticamente:[m
+[31m-   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components[m
+[31m-4. Al termine apri il terminale del progetto ed esegui:[m
+[31m-   npm run dev[m
+[31m-5. Nel browser premi Ctrl + F5.[m
+[31m-[m
+[31m-INSTALLAZIONE MANUALE[m
+[31m-1. Copia tutto il contenuto della cartella "payload" dentro:[m
+[31m-   C:\Users\gioel\Desktop\firinne-grabngo-ebook-components[m
+[31m-2. Conferma la sostituzione dei file.[m
+[31m-3. Elimina manualmente:[m
+[31m-   public\public[m
+[31m-   public\README.txt[m
+[31m-   public\install-product-photos.ps1[m
+[31m-   apply-update.ps1[m
+[31m-4. Esegui:[m
+[31m-   npm run build[m
+[31m-   npm run dev[m
+[31m-[m
+[31m-COMMIT E PUSH[m
+[31m-git add .[m
+[31m-git commit -m "Ottimizza caricamento app e immagini"[m
+[31m-git pull --rebase origin main[m
+[31m-git push origin main[m
+[31m-[m
+[31m-NOTA[m
+[31m-Lo script crea automaticamente una cartella backup-performance-DATA-ORA[m
+[31m-dentro il progetto prima di sostituire i file.[m
+[1mdiff --git a/LEGGIMI.txt b/LEGGIMI.txt[m
+[1mdeleted file mode 100644[m
+[1mindex ef3697d..0000000[m
+[1m--- a/LEGGIMI.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,20 +0,0 @@[m
+[31m-FIX CODICI SYSCO SOLO SALAD[m
+[31m-[m
+[31m-Sostituisci nel progetto questi due file:[m
+[31m-[m
+[31m-src/productSheets/ProductSheetTemplate.jsx[m
+[31m-src/data/supplierInfo.js[m
+[31m-[m
+[31m-I codici:[m
+[31m-5014567 – Round Black Paper Food Container 150 Series 24oz – 1x300 EA[m
+[31m-5014569 – Vegware Round Black Window Lid 150 Series – 1x300 EA[m
+[31m-[m
+[31m-appaiono solo quando draft.category contiene la parola "salad"[m
+[31m-(esempi: Salad, Salads, SALAD).[m
+[31m-[m
+[31m-Dopo la sostituzione:[m
+[31m-1. Ferma Vite con Ctrl + C[m
+[31m-2. Esegui:[m
+[31m-   Remove-Item -Recurse -Force ".\node_modules\.vite" -ErrorAction SilentlyContinue[m
+[31m-3. Esegui:[m
+[31m-   npm run dev[m
+[1mdiff --git a/REPORT-IMMAGINI.txt b/REPORT-IMMAGINI.txt[m
+[1mdeleted file mode 100644[m
+[1mindex 5ffe2b9..0000000[m
+[1m--- a/REPORT-IMMAGINI.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1,9 +0,0 @@[m
+[31m-REPORT IMMAGINI WEBP[m
+[31m-[m
+[31m-asian-noodle: full 1200x800 52.7 KB | thumb 320x213 5.9 KB[m
+[31m-broccoli-hazelnut-tomato-feta: full 1200x800 44.6 KB | thumb 320x213 3.9 KB[m
+[31m-gochujang-roast-salmon: full 1200x800 48.9 KB | thumb 320x213 5.3 KB[m
+[31m-moroccan-couscous-sweet-potato: full 1200x800 55.9 KB | thumb 320x213 4.5 KB[m
+[31m-peri-peri-chicken: full 1200x800 39.8 KB | thumb 320x213 5.0 KB[m
+[31m-red-quinoa-bulgur-beetroot: full 1200x800 47.1 KB | thumb 320x213 5.1 KB[m
+[31m-roast-potato-chorizo: full 1200x800 37.7 KB | thumb 320x213 4.1 KB[m
