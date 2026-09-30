@@ -1,4 +1,4 @@
-﻿import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Asian Noodle Grab-and-Go Salad
@@ -15,8 +15,6 @@ export const productData = {
     "1 yellow pepper, thinly sliced",
     "1 green pepper, thinly sliced",
     "1 small red onion, thinly sliced",
-    "2 carrots, julienned",
-
     "2 spring onions, sliced",
     "Handful fresh coriander, chopped",
     "Handful fresh mint, chopped",
@@ -61,6 +59,3 @@ export default function AsianNoodleGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
-
-
-

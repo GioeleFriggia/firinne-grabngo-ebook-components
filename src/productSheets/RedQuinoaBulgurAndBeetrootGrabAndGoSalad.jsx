@@ -1,4 +1,4 @@
-﻿import ProductSheetTemplate from "./ProductSheetTemplate";
+﻿﻿import ProductSheetTemplate from "./ProductSheetTemplate";
 
 // Modifica qui i testi di questo prodotto.
 // Questo file controlla solo la scheda: Red Quinoa, Bulgur & Beetroot Grab-and-Go Salad
@@ -14,9 +14,8 @@ export const productData = {
     "300g bulgur wheat",
     "600ml water or light vegetable stock",
     "350g cooked beetroot, diced",
-    "1 medium carrot, grated or julienned",
+    "1 cucumber, deseeded and sliced",
     "baby spinach",
-
     "60g toasted pumpkin seeds",
     "Handful fresh parsley, chopped",
     "Handful fresh mint, chopped",
@@ -33,7 +32,7 @@ export const productData = {
   ],
   method: [
     "Cook quinoa and bulgur, then let cool completely.",
-    "Combine quinoa, bulgur, beetroot, carrot, onion, cucumber, herbs, and seeds.",
+    "Combine quinoa, bulgur, beetroot, cucumber, herbs, and seeds.",
     "Whisk dressing ingredients together.",
     "Pour dressing over salad; mix gently.",
   ],
@@ -58,6 +57,3 @@ export default function RedQuinoaBulgurAndBeetrootGrabAndGoSaladSheet({
     <ProductSheetTemplate product={product} updateProduct={updateProduct} />
   );
 }
-
-
-
